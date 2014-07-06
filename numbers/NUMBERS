@@ -1,0 +1,32 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xaf6950 .scope module, "signed_number" "signed_number" 2 8;
+ .timescale 0 0;
+v0xaf7250_0 .var "a", 31 0;
+    .scope S_0xaf6950;
+T_0 ;
+    %movi 8, 4660, 32;
+    %set/v v0xaf7250_0, 8, 32;
+    %vpi_call 2 13 "$display", "Current Value of a = %h", v0xaf7250_0;
+    %movi 8, 4294962636, 32;
+    %set/v v0xaf7250_0, 8, 32;
+    %vpi_call 2 15 "$display", "Current Value of a = %h", v0xaf7250_0;
+    %movi 8, 3735928559, 32;
+    %set/v v0xaf7250_0, 8, 32;
+    %vpi_call 2 17 "$display", "Current Value of a = %h", v0xaf7250_0;
+    %movi 8, 559038737, 32;
+    %set/v v0xaf7250_0, 8, 32;
+    %vpi_call 2 19 "$display", "Current Value of a = %h", v0xaf7250_0;
+    %delay 10, 0;
+    %vpi_call 2 20 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "numbers.v";

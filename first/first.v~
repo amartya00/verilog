@@ -1,0 +1,40 @@
+//============================================================================//
+//                                                                            //
+// About: My first verilog program                                            //
+// Contents: 1) A simple adder circuit                                        //
+//           2) A testbench                                                   //
+//                                                                            //
+//============================================================================//
+
+module adder32 (A,B,Sum);
+  //Port settings
+  input  wire [31:0] A   ;
+  input  wire [31:0] B   ;
+  output wire [31:0] Sum ; // **Port cannot be integer**
+  
+  //Start of always block
+  //always @ (A or B) begin
+  //  Sum <= A+B;
+  //end
+  assign Sum=A+B;
+endmodule
+
+
+module adder32_tb;
+  //Testbench signals
+  integer  A;
+  integer  B;
+  wire [31:0] Sum;
+  
+  //Initial block
+  initial begin
+    $monitor("%d",Sum);
+    A=10;
+    B=20;
+    
+    #5 $finish;
+  end
+  
+  //Module initialization
+  adder32 A1(.A(A), .B(B), .Sum(Sum));
+endmodule

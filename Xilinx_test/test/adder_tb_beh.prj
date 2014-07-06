@@ -1,0 +1,3 @@
+verilog work "adder.v"
+verilog work "adder_tb.v"
+verilog work "/home/amartya/Documents/xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

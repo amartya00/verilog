@@ -1,0 +1,9 @@
+CC = iverilog
+OUT = COUNTER
+FLAGS = -g system-verilog
+FILES = first.v
+
+#Build the binary:wq
+bin:
+	@$(CC) $(FLAGS) -o $(OUT) $(FILES);
+

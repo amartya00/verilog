@@ -1,0 +1,33 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x960c70 .scope module, "adder32_tb" "adder32_tb" 2 23;
+ .timescale 0 0;
+v0x96fbe0_0 .var/i "A", 31 0;
+v0x96fcb0_0 .var/i "B", 31 0;
+v0x96fd60_0 .net "Sum", 31 0, L_0x96fe10; 1 drivers
+S_0x960d60 .scope module, "A1" "adder32" 2 39, 2 9, S_0x960c70;
+ .timescale 0 0;
+v0x93cd10_0 .net "A", 31 0, v0x96fbe0_0; 1 drivers
+v0x96faa0_0 .net "B", 31 0, v0x96fcb0_0; 1 drivers
+v0x96fb40_0 .alias "Sum", 31 0, v0x96fd60_0;
+L_0x96fe10 .arith/sum 32, v0x96fbe0_0, v0x96fcb0_0;
+    .scope S_0x960c70;
+T_0 ;
+    %vpi_call 2 31 "$monitor", "%d", v0x96fd60_0;
+    %movi 8, 10, 32;
+    %set/v v0x96fbe0_0, 8, 32;
+    %movi 8, 20, 32;
+    %set/v v0x96fcb0_0, 8, 32;
+    %delay 5, 0;
+    %vpi_call 2 35 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "first.v";

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/amartya/Documents/Coding/verilog/counter/counter.xst" -ofn "/home/amartya/Documents/Coding/verilog/counter/counter.syr" 

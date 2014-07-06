@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/amartya/Documents/Coding/verilog/ALU/divider.xst" -ofn "/home/amartya/Documents/Coding/verilog/ALU/divider.syr" 
+xst -intstyle ise -ifn "/home/amartya/Documents/Coding/verilog/ALU/divider.xst" -ofn "/home/amartya/Documents/Coding/verilog/ALU/divider.syr" 
