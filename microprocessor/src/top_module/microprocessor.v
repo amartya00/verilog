@@ -2,16 +2,13 @@
 
 module microprocessor(
   //===================================Ports====================================
-  //Instruction cache
   output reg [29:0] inst_addr,
   input      [31:0] inst_bus ,
   
-  //Data cache
   output reg [29:0] data_addr,
   input      [31:0] data_rd  ,
   output reg [31:0] data_wr  ,
   
-  //Usual
   input clk, rst, go);
   
   //=============================Internal registers=============================
@@ -19,30 +16,30 @@ module microprocessor(
   reg [31:0] IB;
   
   //ID registers
-  reg [4 :0] OPC_ID;
-  reg [4 :0] RES_R_ID;
+  reg [7 :0] OPC_ID;
+  reg [7 :0] RES_R_ID;
   reg [31:0] OP1_ID;
   reg [31:0] OP2_ID;
   
   //DF registers
-  reg [4 :0] OPC_DF;
-  reg [4 :0] RES_R_DF;
+  reg [7 :0] OPC_DF;
+  reg [7 :0] RES_R_DF;
   reg [31:0] OP1_DF;
   reg [31:0] OP2_DF;
   
   //EX registers
   reg [31:0] RES;
-  reg [4 :0] RES_R_EX;
+  reg [7 :0] RES_R_EX;
   
   //Misc registers
   reg [29:0] IP;
-  reg [4 :0] CPSR;
+  reg [7 :0] CPSR;
   
   //register file
   reg [31:0] RF [0:31];
   
   //=============================State parameters===============================
-  `include "state_params.v"
+  `include "parameters.v"
   reg [3:0] PS,NS;
   
   //===========================Next State Logic=================================  
